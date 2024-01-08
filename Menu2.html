@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>CoffeeCo - Menu</title>
+    <script>
+         function calculateTotal() {
+      var total = 0;
+      var checkboxes = document.getElementsByName('item');
+
+      for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+          total += parseFloat(checkboxes[i].value);
+        }
+      }
+
+      document.getElementById('total').innerHTML = "Total: $" + total.toFixed(2);
+    }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav style="font-family:Cursive; font-weight: bold; font-size: 20px; color:#265073; "
+                class="navbar navbar-expand-md p-2   ">
+                <a style="font-size: 30px; color: #265073;" class="navbar-brand" href="home.html">CoffeeCo</a>
+                <button class="navbar-toggler" data-bs-toggle="collapse" type="button" data-bs-target="#dropMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <ul style="color: #265073  ; justify-content: end;" id="dropMenu"
+                    class="navbar-nav collapse navbar-collapse">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="home.html">Home </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="Menu2.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutus.html">About US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="review.html">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Joinus.html">Join Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sitemap.html">Site Map</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Validation2.html">Validation</a>
+                    </li>
+
+
+                </ul>
+        </div>
+        </nav>
+        </div>
+    </header>
+
+    <div class="container" style="float: right; align-items: end; position: fixed;" >
+        <div class="btn-holder">
+            <button type="button" onclick="calculateTotal()">Check</button>
+            <p id="total" style="margin-right: 92%;">Total: $0.00</p>
+        </div>
+      </div>
+
+    <!--HOT-->
+    <h3 class="title">Hot Drinks</h3>
+    <br>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card" style="width: 15rem;">
+                    <img class="card-img-top" src="images/american.jpeg" alt="">
+                           
+                    <div class="card-body bg-dark">
+                        <h5 class="card-title text-warning">American</h5>
+                        <p class="card-text text-light">2.50 JD</p>
+                        <p style="color: aliceblue;">Size:
+                            <input type="checkbox" name="item" value="2.50">Small
+                            <input type="checkbox" name="item" value="2.50">Large
+                        </p>
+                        <button class="btn btn-primary">Remove</button>
+                        <button class="btn btn-primary">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 15rem;">
+                    <img class="card-img-top" src="images/latte.jpg" alt="">
+
+                    <div class="card-body bg-dark">
+                        <h5 class="card-title text-warning">Latte</h5>
+                        <p class="card-text text-light">3.50 JD</p>
+                        <p style="color: aliceblue;">Size:
+                            <input type="checkbox" name="item" value="3.50">Small
+                            <input type="checkbox" name="item" value="3.50">Large
+                        </p>
+                        <button class="btn btn-primary">Remove</button>
+                        <button class="btn btn-primary">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 15rem;">
+                    <img class="card-img-top" src="images/macchiato.jpg" alt="">
+
+                    <div class="card-body bg-dark">
+                        <h5 class="card-title text-warning">macchiato</h5>
+                        <p class="card-text text-light">2.50 JD</p>
+                        <p style="color: aliceblue;">Size:
+                            <input type="checkbox" name="item" value="2.50">Small
+                            <input type="checkbox" name="item" value="2.50">Large
+                        </p>
+                        <button class="btn btn-primary">Remove</button>
+                        <button class="btn btn-primary">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 15rem;">
+                    <img class="card-img-top" src="images/cappuccino.jpg" alt="">
+
+                    <div class="card-body bg-dark">
+                        <h5 class="card-title text-warning">cappuchino</h5>
+                        <p class="card-text text-light">3.00 JD</p>
+                        <p style="color: aliceblue;">Size:
+                            <input type="checkbox" name="item" value="3.00">Small
+                            <input type="checkbox" name="item" value="3.00">Large
+                        </p>
+                        <button class="btn btn-primary">Remove</button>
+                        <button class="btn btn-primary">Add</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <br>
+
+        <!--ICED-->
+        <h3 class="title">Iced Drinks</h3>
+        <br>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card" style="width: 15rem;">
+                        <img class="card-img-top" src="images/icedlatte.webp" alt="">
+
+                        <div class="card-body bg-dark">
+                            <h5 class="card-title text-warning">Latte</h5>
+                            <p class="card-text text-light">2.50 JD</p>
+                            <p style="color: aliceblue;">Size:
+                                <input type="checkbox" name="item" value="2.50">Small
+                                <input type="checkbox" name="item" value="2.50">Large
+                            </p>
+                            <button class="btn btn-primary">Remove</button>
+                            <button class="btn btn-primary">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" style="width: 15rem;">
+                        <img class="card-img-top" src="images/spanish.jpg" alt="">
+
+                        <div class="card-body bg-dark">
+                            <h5 class="card-title text-warning">Spanish Latte</h5>
+                            <p class="card-text text-light">3.50 JD</p>
+                            <p style="color: aliceblue;">Size:
+                                <input type="checkbox" name="item" value="3.50">Small
+                                <input type="checkbox" name="item" value="3.50">Large
+                            </p>
+                            <button class="btn btn-primary">Remove</button>
+                            <button class="btn btn-primary">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" style="width: 15rem;">
+                        <img class="card-img-top" src="images/icedamericano.jpeg" alt="">
+
+                        <div class="card-body bg-dark">
+                            <h5 class="card-title text-warning">Americano</h5>
+                            <p class="card-text text-light">3.00 JD</p>
+                            <p style="color: aliceblue;">Size:
+                                <input type="checkbox" name="item" value="3.00">Small
+                                <input type="checkbox" name="item" value="3.00">Large
+                            </p>
+                            <button class="btn btn-primary">Remove</button>
+                            <button class="btn btn-primary">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" style="width: 15rem;">
+                        <img class="card-img-top" src="images/caramel.jpg" alt="">
+
+                        <div class="card-body bg-dark">
+                            <h5 class="card-title text-warning">caramel macchiato</h5>
+                            <p class="card-text text-light">2.50 JD</p>
+                            <p style="color: aliceblue;">Size:
+                                <input type="checkbox" name="item" value="2.50">Small
+                                <input type="checkbox" name="item" value="2.50">Large
+                            </p>
+                            <button class="btn btn-primary">Remove</button>
+                            <button class="btn btn-primary">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+
+            <!--smoothie-->
+            <h3 class="title">Smoothie</h3>
+            <br>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card" style="width: 15rem;">
+                            <img class="card-img-top" src="images/mango.jpg" alt="">
+
+                            <div class="card-body bg-dark">
+                                <h5 class="card-title text-warning">Mango</h5>
+                                <p class="card-text text-light">3.50 JD</p>
+                                <p style="color: aliceblue;">Size:
+                                    <input type="checkbox" name="item" value="3.50">Small
+                                    <input type="checkbox" name="item" value="3.50">Large
+                                </p>
+                                <button class="btn btn-primary">Remove</button>
+                                <button class="btn btn-primary">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card" style="width: 15rem;">
+                            <img class="card-img-top" src="images/mixberry.jpeg" alt="">
+
+                            <div class="card-body bg-dark">
+                                <h5 class="card-title text-warning">Mix Berry</h5>
+                                <p class="card-text text-light">2.50 JD</p>
+                                <p style="color: aliceblue;">Size:
+                                    <input type="checkbox" name="item" value="2.50">Small
+                                    <input type="checkbox" name="item" value="2.50">Large
+                                </p>
+                                <button class="btn btn-primary">Remove</button>
+                                <button class="btn btn-primary">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card" style="width: 15rem;">
+                            <img class="card-img-top" src="images/papaya.jpg" alt="">
+
+                            <div class="card-body bg-dark">
+                                <h5 class="card-title text-warning">papaya</h5>
+                                <p class="card-text text-light">3.00 JD</p>
+                                <p style="color: aliceblue;">Size:
+                                    <input type="checkbox" name="item" value="3.00">Small
+                                    <input type="checkbox" name="item" value="3.00">Large
+                                </p>
+                                <button class="btn btn-primary">Remove</button>
+                                <button class="btn btn-primary">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card" style="width: 15rem;">
+                            <img class="card-img-top" src="images/passion.webp" alt="">
+
+                            <div class="card-body bg-dark">
+                                <h5 class="card-title text-warning">Passsion</h5>
+                                <p class="card-text text-light">2.75 JD</p>
+                                <p style="color: aliceblue;">Size:
+                                    <input type="checkbox" name="item" value="2.75">Small
+                                    <input type="checkbox" name="item" value="2.75">Large
+                                </p>
+                                <button class="btn btn-primary">Remove</button>
+                                <button class="btn btn-primary">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <br>
+
+                <!--Dessert-->
+                <h3 class="title">Dessert</h3>
+                <br>
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="card" style="width: 15rem;">
+                                <img class="card-img-top" src="images/chocolate.webp" alt="">
+
+                                <div class="card-body bg-dark">
+                                    <h5 class="card-title text-warning">Chocolate Cake</h5>
+                                    <p class="card-text text-light">2.50 JD</p>
+                                    <button class="btn btn-primary">Remove</button>
+                                    <button class="btn btn-primary">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card" style="width: 15rem;">
+                                <img class="card-img-top" src="images/lazycake.jpg" alt="">
+
+                                <div class="card-body bg-dark">
+                                    <h5 class="card-title text-warning">lazy Cake</h5>
+                                    <p class="card-text text-light">2.50 JD</p>
+                                    <button class="btn btn-primary">Remove</button>
+                                    <button class="btn btn-primary">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card" style="width: 15rem;">
+                                <img class="card-img-top" src="images/cheesecake.webp" alt="">
+
+                                <div class="card-body bg-dark">
+                                    <h5 class="card-title text-warning">Cheese Cake</h5>
+                                    <p class="card-text text-light">2.50 JD</p>
+                                    <button class="btn btn-primary">Remove</button>
+                                    <button class="btn btn-primary">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card" style="width: 15rem;">
+                                <img class="card-img-top" src="images/cookies.jpg" alt="">
+
+                                <div class="card-body bg-dark">
+                                    <h5 class="card-title text-warning">Cookies</h5>
+                                    <p class="card-text text-light">2.50 JD</p>
+                                    <button class="btn btn-primary">Remove</button>
+                                    <button class="btn btn-primary">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
+
+
+                    <script src="js/bootstrap.bundle.min.js"></script>
+                    <script src="js/JavaScript.js"></script>
+
+</body>
+
+</html>

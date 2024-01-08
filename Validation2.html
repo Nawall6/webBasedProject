@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validation</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var age = document.getElementById('age').value;
+            var rad = document.getElementsByName('r1').value;
+          
+            document.getElementById('nameError').innerHTML = name === '' ? 'Name is required' :'';
+            document.getElementById('emailError').innerHTML = email === '' ? 'Email is required' : '';
+            document.getElementById('ageError').innerHTML = (age && !isNaN(age) && age >= 18 && age <= 60) ?' ' : 'Age must be between 18 and 60';
+           
+            var radioButtons = document.getElementsByName("r1");
+            var errorMessage = document.getElementById("error-message");
+
+            var selected = false;
+            for (var i = 0; i < radioButtons.length; i++) {
+                if (radioButtons[i].checked) {
+                    selected = true;
+                    break;
+                }
+            }
+            if (!selected) {
+                errorMessage.innerHTML = "Please select a radio station.";
+                return false; 
+            } else {
+                errorMessage.innerHTML = ""; 
+              
+            }
+          
+            return !(name == '' || email == '' || isNaN(age) || age > 18 || age < 60 || !radioButtons );
+        }
+
+        function displayResult() {
+  var name = document.getElementById('name').value;
+  var age = document.getElementById('age').value;
+  var email = document.getElementById('email').value;
+  var rate = document.getElementById('rate').value;
+  var text = document.getElementById('message').value;
+
+  var rad = document.getElementsByName('r1');
+  for(var i=0; i<=rad.length;i++){
+    if(rad[i].checked){
+document.getElementById("result").innerHTML=rad[i].value;
+break;}
+else
+document.getElementById("result").innerHTML="Please  fill the form ";
+  }
+
+  var resultText = "Name: " + name + "\n Email: " + email +"\n Age : "+age+ "\n Rate: " + rate + " stars "+ " \nYour Feedback :"+ text+"\nYou know us from: " + rad[i].value;
+
+  document.getElementById('result').innerHTML = resultText;
+}
+    </script>
+</head>
+<body>
+  <header>
+    <div class="container">
+    <nav style="font-family:Cursive; font-weight: bold; font-size: 20px; color:#265073; "
+        class="navbar navbar-expand-md p-2   ">
+        <a style="font-size: 30px; color: #265073;" class="navbar-brand" href="home.html">CoffeeCo</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" type="button" data-bs-target="#dropMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <ul style= "color: #265073  ; justify-content: end;" id="dropMenu" class="navbar-nav collapse navbar-collapse">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Home </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Menu2.html">Menu</a>
+                </li>   
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutus.html">About US</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="review.html">Reviews</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="Joinus.html">Join Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sitemap.html">Site Map</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="Validation2.html">Validation</a>
+              </li>
+             
+
+
+            </ul>
+        </div>
+    </nav>
+</div>
+</header>
+    <h5 style="color:  #265073; margin-left: 65%; margin-top: 2%;">Date and Time: <span id="datetime"></span></h5>
+    <script >
+    
+      function updateDateTime() {
+        var time = new Date();
+        document.getElementById('datetime').innerHTML = time.toLocaleString();
+      }
+      setInterval(updateDateTime, 1000);
+      //updateDateTime();
+    </script>
+
+   
+
+    <form onsubmit="return validateForm()" class="forms">
+
+      <div class="form-group">
+        <label for="name">Name:</label> 
+        <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter name">
+        <small id="nameHelp" class="form-text text-muted">We'll never share your name with anyone else.</small>
+        <span id="nameError" style="color: red;"></span><br>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          <span id="emailError" style="color: red;"></span><br>
+        </div>
+
+        
+      </div>
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="text" class="form-control" id="age" aria-describedby="ageHelp" placeholder="Enter age">
+        <small id="nameHelp" class="form-text text-muted">We'll never share your info with anyone else.</small>
+        <span id="ageError" style="color: red;"></span><br>
+      </div>
+      <div class="form-group">
+        <label for="rating">Rate us (1-5) stars: </label>
+        <input type="number" class="form-control" id="rate"  placeholder="Enter" name="rating" min="1" max="5">
+        <span id="rateError" style="color: red;"></span>
+      </div>
+
+      <div class="form-group">
+        <label>How did you know us ? </label><br>
+        
+        <input type="radio" name="r1" value="Instagram ads">Instagram ads. 
+        <input type="radio" name="r1" value="From friends">From friends.
+        <div id="error-message" style="color: red;" class="error-message"></div>
+      </div>
+     
+        <div class="form-group">
+        <span id="acceptTermsError2" style="color: red;"></span><br>
+        </div>
+        <div class="form-group">
+        <textarea
+        class="error-message"
+          id="message"
+         placeholder="Your Message:"
+        ></textarea>
+       
+        <textarea  id="result"></textarea>
+        <input type="submit" id="Submit" value="Submit" onclick="displayResult()"/>
+      </div>
+    </form>
+    
+
+
+</body>
+</html>
